@@ -1,0 +1,77 @@
+<%- include("../../../partials/header.ejs") %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <%- include('../../../partials/sidebar.ejs') %>
+        </div>
+        <div class="col-md-9">
+            <div class="card card-body m-4 bg-light">
+                <h4 class="mb-2 text-center">Create Your Post</h4>
+                <form action="/posts/create" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Post Title</label>
+                        <input type="text" name="title" class="form-control <%= error.title ? "is-invalid" : ""  %>" value="<%=value.title? value.title: ""%>">
+                        <div class="invalid-feedback"><%= error.title %> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tiny-mce-post-body">Post Body</label>
+                       <textarea name="body" id="tiny-mce-post-body"class="form-control <%= error.body ? "is-invalid" : ""  %>"><%=value.body? value.body: ""%></textarea>
+                       <div class="invalid-feedback"><%= error.body %> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Post Tags</label>
+                        <input type="text" name="tags" class="form-control <%= error.tags ? "is-invalid" : ""  %>" value="<%=value.tags? value.tags: ""%>">
+                        <div class="invalid-feedback"><%= error.tags %> </div>
+                    </div>
+
+                    <div class="col-sm-7 pl-0">
+                        <label for="post-thumbnail">Upload Thumbnail</label>
+                        <div class="input-group">
+                          
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"></span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name="post-thumbnail" class="custom-file-input" id="inputGroupFile">
+                                <label for="inputGroupFile" class="custom-file-label">Choose File</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    
+                   <input type="submit" class="btn btn-primary my-4" value="Create-post">
+                </form>
+            </div>
+           
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<%- include("../../../partials/footer.ejs") %>
+
+<script src="https://cdn.tiny.cloud/1/r90oeepvz1txloxf5pnh953us5y8ygtjgf1vycvl1s1qow9v/tinymce/5/tinymce.min.js"></script>
+
+<script src="/scripts/tinymce.js"></script>
+
+<script>
+
+    $('#inputGroupFile').on('change', function(e) {
+        let filename = e.target.files[0].name
+        $(this).next('.custom-file-label').html(filename)
+    })
+</script>
+
+
+
+
+</body>
+</html>

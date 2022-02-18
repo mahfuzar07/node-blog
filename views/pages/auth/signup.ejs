@@ -1,0 +1,37 @@
+<%- include("../../partials/header.ejs") %>
+<div class="container my-container my-4">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <div class="card card-body bg-light">
+            <h4 class="mb-4 text-center">Create A New Account</h4>
+            <form action="/auth/signup" method="POST">
+                <div class="form-group ">
+                    <label  for="username">User Name</label>
+                    <input type="text"  name="username" class="form-control  <%= error.username ? "is-invalid" : ""  %>"value="<%=value.username ? value.username: ""%>">
+                    <div class="invalid-feedback"><%= error.username && error.username  %> </div>
+                </div>
+                <div class="form-group">
+                  <label  for="email">Email</label>
+                  <input type="email" name="email" class="form-control <%= error.email ? "is-invalid" : ""  %>" value=" <%=value.email ? value.email : ""%>">
+                  <div class="invalid-feedback"><%= error.email && error.email  %> </div>
+              </div>
+              <div class="form-group">
+                  <label  for="password">Password</label>
+                  <input  type="password" name="password" class="form-control  <%= error.password ? "is-invalid" : ""  %> " value="<%=value.password ? value.password :""%>">
+                  <div class="invalid-feedback"> <%= error.password && error.password %> </div>
+              </div>
+              <div class="form-group">
+                  <label  for="confirmpassword">Confirm Password</label>
+                  <input type="password" name="confirmpassword" class="form-control  <%= error.confirmpassword ?"is-invalid" : ""  %>">
+                  <div class="invalid-feedback"><%= error.confirmpassword && error.confirmpassword  %> </div>
+              </div>
+            <input type="submit" class="btn btn-primary " value="Signup">
+            </form>
+          </div>
+      </div>
+
+  </div>
+</div>
+<%- include("../../partials/footer.ejs") %> 
+</body>
+</html>

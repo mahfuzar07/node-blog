@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://kit.fontawesome.com/6d1200ad3a.js"></script>
+    <link rel="stylesheet" type="text" href="/styles/style.css" />
+
+    <title><%= title %></title>
+    <style>
+      body {
+        font-family: 'Lora', serif;
+      }
+      h4 {
+        font-family: 'Lora', serif;
+        font-style: italic;
+      }
+      .title-font {
+        font-family: 'Lora', serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 42px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("./nav.ejs") %>
+  </body>
+</html>
