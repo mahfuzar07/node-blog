@@ -11,14 +11,14 @@
            
             <div class="mb-5">
                 <h4 class="mb-3 text-center">My Recently Created Posts</h4>
-              <div class="row  ">
+              <div class="row  justify-content-center">
                             <% if (posts.length === 0) { %>
                                 <div class="text-center text-muted">
                                     <p>There is no posts available right now</p>
                                 </div>
                             <% } else { %>
                                 <% for (let post of posts) { %>
-                                    <div class="card  col-sm-3 ">
+                                    <div class="card  col-sm-3 m-3">
                                         <% if (post.thumbnail) { %>
                                             <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="card-img-top mt-2">
                                         <% } %>
@@ -36,14 +36,14 @@
              
              <div class="mb-4">
                 <h4 class=" mb-3 text-center">My Recently Created Bookmarks</h4>
-              <div class="row">
+              <div class="row justify-content-center">
                     <% if (bookmarks.length === 0) { %>
                     <div class="text-center text-muted">
                         <p>There is no posts available right now</p>
                          </div>
                          <% } else { %>
                          <% for (let post of bookmarks) { %>
-                         <div class="card  col-sm-3">
+                         <div class="card  col-sm-3 m-3">
                          <% if (post.thumbnail) { %>
                           <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="card-img-top mt-2">
                             <% } %>
