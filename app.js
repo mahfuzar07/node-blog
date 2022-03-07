@@ -27,7 +27,7 @@ const middleware = [
 	session({
 		secret: process.env.SECRET_KEY || 'SECRET_KEY',
 		resave: false,
-		saveUninitialized: true,
+		saveUninitialized: false,
 		store: store,
 	}),
 	bindUserWithRequest(),
